@@ -1,9 +1,8 @@
 version: 2.1
 
 description: >
-  CircleCI integration for the Ship team build monitoring tool - https://www.shipapp.io/
+  CircleCI integration for the Ship DevOps monitoring and communications tool - https://www.shipapp.io/
 
-# This information will be displayed in the orb registry and is not mandatory.
 display:
   home_url: "https://www.shipapp.io/"
   source_url: "https://github.com/ship-public/ship-orb"

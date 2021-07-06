@@ -1,0 +1,22 @@
+description: Simple example
+usage:
+  version: 2.1
+  orbs:
+    ship: ship-public/ship-orb@x.y.z
+  jobs:
+    build:
+      docker:
+        - image: your-image
+      steps:
+        # Put this step first to set the "in progress" status in Ship
+        - ship/notify:
+            completed: false
+        - checkout
+        - other_commands
+        # And put this step again at the end of the build for when the run is complete - note no ':' if no params
+        - ship/notify
+
+  workflows:
+    your-workflow:
+      jobs:
+        - build

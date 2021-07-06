@@ -1,0 +1,38 @@
+description: Notify Ship
+
+parameters:
+  org:
+    type: string
+    default: ""
+    description: |
+      Your Ship organization, typically the same as your Github organization.
+      By default the orb uses the SHIP_ORG environment variable / secret in your
+      project or organization settings.
+  completed:
+    type: string
+    default: "true"
+    description: Override this to false to show that a run is in progress
+  host:
+    type: string
+    description: Override for orb-development purposes only
+    default: "api.backend.shipapp.io"
+
+steps:
+  - run:
+      when: on_fail
+      name: Ship - Detecting Job Status (FAIL)
+      command: |
+        echo 'export CCI_STATUS="fail"' > /tmp/SHIP_JOB_STATUS
+  - run:
+      when: on_success
+      name: Ship - Detecting Job Status (PASS)
+      command: |
+        echo 'export CCI_STATUS="pass"' > /tmp/SHIP_JOB_STATUS
+  - run:
+      when: always
+      environment:
+        SHIP_ORG_PARAM: <<parameters.org>>
+        SHIP_COMPLETED: <<parameters.completed>>
+        SHIP_HOST: <<parameters.host>>
+      name: Notify Ship
+      command: <<include(scripts/notify.sh)>>
