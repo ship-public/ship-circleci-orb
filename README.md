@@ -16,6 +16,8 @@ Before you start to use the Ship CircleCI Orb you need to make sure you've compl
  
 * [Email us](mailto:hello@shipapp.io) to get your Orb API key.
 
+* **Opt-in to use of third-party orbs on your CircleCI organization’s Security settings page**. 
+
 * Identify a CircleCI workflow you want to integrate with Ship.
 
 ## Adding Ship to your CircleCI workflows
