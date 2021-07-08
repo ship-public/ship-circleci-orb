@@ -10,7 +10,7 @@ This project is an "Orb" for CircleCI. Orbs are CircleCI's way of providing plug
 
 Before you start to use the Ship CircleCI Orb you need to make sure you've completed a few tasks:
 
-* You should already have setup your Github Organization to use Ship. You can [read how to do that here](https://www.shipapp.io/user-guide).
+* You should already have setup your Github Organization to use Ship. You can [read how to do that here](https://www.shipapp.io/user-guide/#github).
   If you don't use Github then Ship can't help you at this time, but keep your eyes peeled 
   on [our Twitter](https://twitter.com/shipapp_).
  
