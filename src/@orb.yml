@@ -4,6 +4,6 @@ description: >
   CircleCI integration for the Ship DevOps monitoring and communications tool - https://www.shipapp.io/
 
 display:
-  home_url: "https://www.shipapp.io/"
+  home_url: "https://github.com/ship-public/ship-orb"
   source_url: "https://github.com/ship-public/ship-orb"
 

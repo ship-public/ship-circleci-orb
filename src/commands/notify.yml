@@ -1,20 +1,23 @@
 description: Notify Ship
 
 parameters:
+  completed:
+    type: string
+    default: "true"
+    description: |
+      Override this to "false" when calling Ship at the beginning of your job to show that a run is in progress
   org:
     type: string
     default: ""
     description: |
-      Your Ship organization, typically the same as your Github organization.
-      By default the orb uses the SHIP_ORG environment variable / secret in your
-      project or organization settings.
-  completed:
-    type: string
-    default: "true"
-    description: Override this to false to show that a run is in progress
+      By default Ship uses the CircleCI "Project Username" as your Ship Organization name,
+      since that is typically the same as your Github Organization. In case you need to override
+      your Ship Org you can either specify it with this org parameter, alternatively
+      you can set the SHIP_ORG environment variable in your project settings, or context.
   host:
     type: string
-    description: Override for orb-development purposes only
+    description: |
+      IGNORE - only overridden for orb-development purposes
     default: "api.backend.shipapp.io"
 
 steps:

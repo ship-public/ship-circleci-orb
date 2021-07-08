@@ -7,8 +7,7 @@ if [ -n "$SHIP_ORG_PARAM" ]; then
 fi
 
 if [ -z "$ACTUAL_SHIP_ORG" ]; then
-  echo "[Ship Orb]: ERROR: Ship org parameter is not set."
-  exit 1
+  ACTUAL_SHIP_ORG=$CIRCLE_PROJECT_USERNAME
 fi
 
 if [ -z "$SHIP_COMPLETED" ]; then
@@ -54,7 +53,6 @@ WORKFLOW_ID=$CIRCLE_JOB
 DATE_TIME="$(date +%F)T$(date -u +%T)Z"
 RUN_NUMBER=$CIRCLE_BUILD_NUM
 PROVIDER_RUN_URL=$CIRCLE_BUILD_URL
-CCI_STATUS=$CCI_STATUS
 
 if [ "$SHIP_COMPLETED" = "true" ]; then
   ACTIVITY="RunCompleted"
@@ -70,7 +68,7 @@ fi
 
 RUN_ID="$CIRCLE_WORKFLOW_ID:$ACTIVITY:$DATE_TIME"
 
-echo "SHIP_ORG=$ACTUAL_SHIP_ORG"
+echo "ACTUAL_SHIP_ORG=$ACTUAL_SHIP_ORG"
 echo "SHIP_HOST=$SHIP_HOST"
 echo "PROJECT_NAME=$PROJECT_NAME"
 echo "PROJECT_ID=$PROJECT_ID"
