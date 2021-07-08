@@ -61,6 +61,12 @@ usage:
               - org-global
 ```
 
+Once you've completed the changes to your project configuration then push the change to Github. On your next 
+workflow run you should see your workflow appear automatically in your running version of Ship.
+
+Assuming that this is working correctly the in Ship you can drill-down into workflows, link to runs and commits, 
+communicate with your teammates about when things go wrong, and a [whole lot more](https://www.shipapp.io/features).
+
 ## Reference
 
 Ship's page in the CircleCI Orb registry is [here](https://circleci.com/developer/orbs/orb/ship-public/ship-orb).
