@@ -25,7 +25,7 @@ Before you start to use the Ship CircleCI Orb you need to make sure you've compl
 CircleCI doesn't support "organization-wide" plugins, and so you'll need to add Ship support explicitly
 to each of your organization's workflows. Fortunately it's not too hard to do so.
 
-1. First you'll need to put the API key from the prerequisites in an environment variable. We recommend that 
+1. First you'll need to put the API key from the prerequisites in an environment variable (`SHIP_API_KEY`). We recommend that 
 you put it in an [organization-wide _Context_](https://circleci.com/docs/2.0/contexts/), but alternatively
    you can put it in your [project-specific settings](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project).
    
