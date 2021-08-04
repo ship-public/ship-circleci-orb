@@ -1,6 +1,8 @@
 # CircleCI Orb for Ship
 
-Welcome to Ship's CircleCI support! If you don't know what Ship is then take a look [at our website](https://www.shipapp.io/).
+Welcome to Ship's CircleCI support! To
+learn how Ship can help you with your CircleCI projects, please
+see [our website](https://www.shipapp.io/integrations/circleci).
 
 This project is an "Orb" for CircleCI. Orbs are CircleCI's way of providing plugins for your jobs.
 
