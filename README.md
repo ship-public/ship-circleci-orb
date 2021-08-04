@@ -25,7 +25,7 @@ You need to opt-in to use of third-party orbs on your CircleCI organization’s 
 CircleCI doesn't support "organization-wide" plugins, and so you'll need to add Ship support explicitly to each of your
 organization's workflows. Pick one of your workflows to start with.
 
-# Step 5: Add the Ship Orb to your workflow
+## Step 5: Add the Ship Orb to your workflow
 
 First you'll need to put the API key we sent you in Step 2 in an environment variable (`SHIP_API_KEY`). We recommend
 that you put it in an [organization-wide _Context_](https://circleci.com/docs/2.0/contexts/), but alternatively you can
