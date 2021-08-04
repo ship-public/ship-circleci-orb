@@ -1,37 +1,39 @@
 # CircleCI Orb for Ship
 
-Welcome to Ship's CircleCI support! To
-learn how Ship can help you with your CircleCI projects, please
+Welcome to Ship's CircleCI support! To learn how Ship can help you with your CircleCI projects, please
 see [our website](https://www.shipapp.io/integrations/circleci).
 
 This project is an "Orb" for CircleCI. Orbs are CircleCI's way of providing plugins for your jobs.
 
 **The latest version of Ship's Orb is 0.2.0**
 
-## Prerequisites
+## Step 1: Add the Ship App to your GitHub Organization
 
-Before you start to use the Ship CircleCI Orb you need to make sure you've completed a few tasks:
+This can be done from our [GitHub Marketplace listing](https://github.com/marketplace/shipapp-io). Ship needs to
+integrate with Github for user authentication.
 
-* You should already have setup your Github Organization to use Ship. You can [read how to do that here](https://www.shipapp.io/user-guide/#github).
-  If you don't use Github then Ship can't help you at this time, but keep your eyes peeled 
-  on [our Twitter](https://twitter.com/shipapp_).
- 
-* [Email us](mailto:hello@shipapp.io) to get your Orb API key.
+## Step 2: Get your Ship + CircleCI API Key
 
-* **Opt-in to use of third-party orbs on your CircleCI organization’s Security settings page**. 
+Email [hello@shipapp.io](mailto:hello@shipapp.io) to get yours!
 
-* Identify a CircleCI workflow you want to integrate with Ship.
+## Step 3: Opt-in to use of third-party orbs
 
-## Adding Ship to your CircleCI workflows
+You need to opt-in to use of third-party orbs on your CircleCI organization’s Security settings page.
 
-CircleCI doesn't support "organization-wide" plugins, and so you'll need to add Ship support explicitly
-to each of your organization's workflows. Fortunately it's not too hard to do so.
+## Step 4: Pick a workflow
 
-1. First you'll need to put the API key from the prerequisites in an environment variable (`SHIP_API_KEY`). We recommend that 
-you put it in an [organization-wide _Context_](https://circleci.com/docs/2.0/contexts/), but alternatively
-   you can put it in your [project-specific settings](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project).
-   
-1. The remainder of the work is to update your workflow's CircleCI `config.yml` file. We'll explain by way of an example:
+CircleCI doesn't support "organization-wide" plugins, and so you'll need to add Ship support explicitly to each of your
+organization's workflows. Pick one of your workflows to start with.
+
+# Step 5: Add the Ship Orb to your workflow
+
+First you'll need to put the API key we sent you in Step 2 in an environment variable (`SHIP_API_KEY`). We recommend
+that you put it in an [organization-wide _Context_](https://circleci.com/docs/2.0/contexts/), but alternatively you can
+put it in
+your [project-specific settings](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project)
+.
+
+The remainder of the work is to update your workflow's CircleCI `config.yml` file. We'll explain by way of an example:
 
 ```yaml
 description: Simple example
@@ -65,10 +67,10 @@ usage:
               - org-global
 ```
 
-Once you've completed the changes to your project configuration then push the change to Github. On your next 
-workflow run you should see your workflow appear automatically in your running version of Ship.
+Once you've completed the changes to your project configuration then push the change to Github. On your next workflow
+run you should see your workflow appear automatically in your running version of Ship!
 
-Assuming that this is working correctly the in Ship you can drill-down into workflows, link to runs and commits, 
+Assuming that this is working correctly then in Ship you can drill-down into workflows, link to runs and commits,
 communicate with your teammates about when things go wrong, and a [whole lot more](https://www.shipapp.io/features).
 
 ## Reference
@@ -79,10 +81,10 @@ The Ship command has two parameters:
 
 * `completed` is used to show whether the build has finished (`true` - the default value) or whether it is in
   progress (`false`)
-* `org` : by default Ship uses the CircleCI "Project Username" as your Ship Organization name,
-  since that is typically the same as your Github Organization. In case you need to override
-  your Ship Org name you can either specify it with the `org` parameter, alternatively
-  you can set the `SHIP_ORG` environment variable in your project settings, or organization context.
+* `org` : by default Ship uses the CircleCI "Project Username" as your Ship Organization name, since that is typically
+  the same as your Github Organization. In case you need to override your Ship Org name you can either specify it with
+  the `org` parameter, alternatively you can set the `SHIP_ORG` environment variable in your project settings, or
+  organization context.
 
 ## Support
 
