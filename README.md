@@ -50,7 +50,7 @@ usage:
       steps:
         # Put this step first to let Ship know your job has started. Make sure to set the "completed" flag to false
         - ship/notify:
-            completed: false
+            completed: "false"
         - all_of_your_job_commands
         # And put this step again at the end of the build for when the run is complete - note no ':' at the end of 
         # the command name if not specifying any params
